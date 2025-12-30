@@ -332,44 +332,39 @@ function LandingPage() {
             </div>
 
             <div className="hero-visual">
-              <div className="hero-card">
-                <div className="hero-card-glow"></div>
-                <div className="hero-card-content">
-                  <div className="scan-animation">
-                    <div className="scan-ring scan-ring-1"></div>
-                    <div className="scan-ring scan-ring-2"></div>
-                    <div className="scan-ring scan-ring-3"></div>
-                    <div className="scan-center">
-                      <Icons.FaceScan />
-                    </div>
-                  </div>
-                  <div className="scan-status">
-                    <div className="scan-status-icon success">
-                      <Icons.Check />
-                    </div>
-                    <div className="scan-status-text">
-                      <span className="scan-status-label">Identity Verified</span>
-                      <span className="scan-status-name">Welcome, Sarah!</span>
-                    </div>
-                  </div>
-                  <div className="scan-details">
-                    <div className="scan-detail">
-                      <span className="scan-detail-label">Time</span>
-                      <span className="scan-detail-value">09:00 AM</span>
-                    </div>
-                    <div className="scan-detail">
-                      <span className="scan-detail-label">Status</span>
-                      <span className="scan-detail-value status-present">Present</span>
-                    </div>
+              <div className="video-container">
+                <div className="video-glow"></div>
+                <div className="video-wrapper">
+                  <video 
+                    className="demo-video"
+                    controls
+                    poster="/video-poster.png"
+                    preload="metadata"
+                  >
+                    <source src="/demo.mp4" type="video/mp4" />
+                    <source src="/demo.webm" type="video/webm" />
+                    Your browser does not support the video tag.
+                  </video>
+                  <div className="video-overlay">
+                    <button className="play-button" onClick={(e) => {
+                      const video = e.currentTarget.parentElement.previousElementSibling;
+                      if (video) {
+                        video.play();
+                        e.currentTarget.parentElement.style.display = 'none';
+                      }
+                    }}>
+                      <Icons.Play />
+                      <span>Watch Demo</span>
+                    </button>
                   </div>
                 </div>
                 <div className="floating-badge floating-badge-1">
                   <Icons.Shield />
-                  <span>Encrypted</span>
+                  <span>Secure</span>
                 </div>
                 <div className="floating-badge floating-badge-2">
                   <Icons.Bolt />
-                  <span>Real-time</span>
+                  <span>Fast</span>
                 </div>
               </div>
             </div>
