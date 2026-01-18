@@ -335,28 +335,14 @@ function LandingPage() {
               <div className="video-container">
                 <div className="video-glow"></div>
                 <div className="video-wrapper">
-                  <video 
+                  <iframe
                     className="demo-video"
-                    controls
-                    poster="/video-poster.png"
-                    preload="metadata"
-                  >
-                    <source src="/demo.mp4" type="video/mp4" />
-                    <source src="/demo.webm" type="video/webm" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <div className="video-overlay">
-                    <button className="play-button" onClick={(e) => {
-                      const video = e.currentTarget.parentElement.previousElementSibling;
-                      if (video) {
-                        video.play();
-                        e.currentTarget.parentElement.style.display = 'none';
-                      }
-                    }}>
-                      <Icons.Play />
-                      <span>Watch Demo</span>
-                    </button>
-                  </div>
+                    src="https://www.youtube.com/embed/bu8mLr4-Df8?rel=0&modestbranding=1"
+                    title="FaceMark Demo Video"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
                 </div>
                 <div className="floating-badge floating-badge-1">
                   <Icons.Shield />
